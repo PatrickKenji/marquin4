@@ -56,16 +56,16 @@ function App() {
           : 'bg-white/95 backdrop-blur-sm border-b border-brand-200 shadow-soft'
       }`}>
         <Container>
-          <div className="flex items-center justify-between h-16">
-                                          <div className="flex items-center">
-                  <img 
-                    src={isHeaderTransparent ? logoBranca : logoPreta}
-                    alt="Urgani Advocacia"
-                    className="h-12 w-auto transition-all duration-300"
-                  />
-                </div>
-                          <Navigation isTransparent={isHeaderTransparent} logoBranca={logoBranca} logoPreta={logoPreta} />
-                              <MobileMenu isTransparent={isHeaderTransparent} logoBranca={logoBranca} logoPreta={logoPreta} />
+          <div className="flex items-center justify-between h-14 sm:h-16">
+            <div className="flex items-center">
+              <img 
+                src={isHeaderTransparent ? logoBranca : logoPreta}
+                alt="Urgani Advocacia"
+                className="h-10 sm:h-12 w-auto transition-all duration-300"
+              />
+            </div>
+            <Navigation isTransparent={isHeaderTransparent} logoBranca={logoBranca} logoPreta={logoPreta} />
+            <MobileMenu isTransparent={isHeaderTransparent} logoBranca={logoBranca} logoPreta={logoPreta} />
           </div>
         </Container>
       </header>
@@ -83,24 +83,24 @@ function App() {
             <div className="w-full flex justify-start items-center h-full pt-36 sm:pt-32 lg:pt-48 pl-0 sm:pl-0 lg:pl-2">
               {/* Conteúdo centralizado */}
               <div className="text-left max-w-5xl px-0 flex flex-col justify-center py-0 sm:py-0">
-                                <Heading level={1} className="mb-6 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-relaxed max-w-4xl">
+                                <Heading level={1} className="mb-6 text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-relaxed max-w-4xl">
                   <div>Especialistas em Direito</div>
                   <div>do Agronegócio</div>
                 </Heading>
                 
-                <p className="text-lg lg:text-xl text-brand-100 mb-8 leading-relaxed max-w-2xl">
+                <p className="text-base sm:text-lg lg:text-xl text-brand-100 mb-8 leading-relaxed max-w-2xl">
                   Atuação estratégica em dívidas rurais, seguros agrícolas negados e proteção do patrimônio.
                 </p>
                 
                 {/* Botões de Ação */}
                 <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-start">
-                  <Button whatsapp variant="primary" size="lg" className="text-base px-6 py-3 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto min-w-[280px]">
+                  <Button whatsapp variant="primary" size="lg" className="text-sm sm:text-base px-4 sm:px-6 py-3 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto min-w-[200px] sm:min-w-[280px]">
                     Falar agora
                   </Button>
                   <Button 
                     variant="secondary" 
                     size="lg" 
-                    className="text-base px-6 py-3 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto min-w-[280px]"
+                    className="text-sm sm:text-base px-4 sm:px-6 py-3 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto min-w-[200px] sm:min-w-[280px]"
                     onClick={() => {
                       const element = document.getElementById('sobre')
                       if (element) {
@@ -113,15 +113,15 @@ function App() {
                 </div>
 
                 {/* Bullets - Na mesma linha */}
-                <div className="flex flex-col sm:flex-row gap-6 justify-start">
-                  <div className="flex items-center justify-start text-sm text-brand-100">
-                    <svg className="w-5 h-5 mr-3 flex-shrink-0" fill="#6B8A6B" viewBox="0 0 20 20">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start">
+                  <div className="flex items-center justify-start text-xs sm:text-sm text-brand-100">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 flex-shrink-0" fill="#6B8A6B" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     + de 15 anos de experiência no agro
                   </div>
-                  <div className="flex items-center justify-start text-sm text-brand-100">
-                    <svg className="w-5 h-5 mr-3 flex-shrink-0" fill="#6B8A6B" viewBox="0 0 20 20">
+                  <div className="flex items-center justify-start text-xs sm:text-sm text-brand-100">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 flex-shrink-0" fill="#6B8A6B" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     Atendimento presencial em Maringá e região
@@ -158,9 +158,9 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-brand-800 text-white py-16">
+      <footer className="bg-brand-800 text-white py-12 sm:py-16">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
             {/* Coluna 1: Sobre a Empresa */}
             <div className="lg:col-span-2">
               <div className="mb-6">

@@ -29,7 +29,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isTransparent = false })
         onClick={() => setIsOpen(!isOpen)}
         className={`p-2 transition-colors ${
           isTransparent 
-            ? 'text-black sm:text-white hover:text-brand-100' 
+            ? 'text-white hover:text-brand-100' 
             : 'text-black hover:text-gray-700'
         }`}
         aria-label="Abrir menu de navegação"

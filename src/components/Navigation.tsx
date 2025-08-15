@@ -28,7 +28,7 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '', isTransp
           onClick={() => handleNavClick(item.id)}
           className={`font-medium transition-colors ${
             isTransparent 
-              ? 'text-black sm:text-white hover:text-brand-100' 
+              ? 'text-white hover:text-brand-100' 
               : 'text-black hover:text-gray-700'
           }`}
         >
