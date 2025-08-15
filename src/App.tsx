@@ -83,7 +83,7 @@ function App() {
             <div className="w-full flex justify-start items-center h-full pt-36 sm:pt-32 lg:pt-48 pl-0 sm:pl-0 lg:pl-2">
               {/* Conteúdo centralizado */}
               <div className="text-left max-w-5xl px-0 flex flex-col justify-center py-0 sm:py-0">
-                                <Heading level={1} className="mb-6 text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-relaxed max-w-4xl">
+                                <Heading level={1} className="mb-6 text-[22px] sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-relaxed max-w-4xl">
                   <div>Especialistas em Direito</div>
                   <div>do Agronegócio</div>
                 </Heading>
