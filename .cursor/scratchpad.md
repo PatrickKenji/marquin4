@@ -165,3 +165,232 @@ A nova paleta de cores foi implementada com sucesso em todo o projeto, criando u
   - Título: `text-white` para contraste
   - Parágrafo: `text-brand-100` para legibilidade
 - **Resultado**: Visual consistente com as outras seções de destaque
+
+## Simplificação do Background do Hero
+
+### Antes: Background Complexo e Movimentado
+- **Elementos removidos**: Círculos flutuantes, elementos geométricos, linhas onduladas, partículas
+- **Animações removidas**: float-slow, float-medium, float-fast, wave-slow, wave-medium
+- **Complexidade**: Muitos elementos visuais que podiam distrair do conteúdo principal
+
+### Depois: Degradê Animado Sutil e Elegante
+- **Background**: `bg-gradient-to-br from-brand-50 via-earth-50 to-brand-100`
+- **Animação**: `animate-gradient-shift` com transição suave de 8 segundos
+- **Efeito**: Movimento sutil do degradê da esquerda para direita e vice-versa
+- **Resultado**: Visual limpo, profissional e elegante que não compete com o conteúdo
+
+### Características da Nova Animação
+- **Duração**: 8 segundos para movimento muito sutil
+- **Direção**: Transição horizontal suave entre as cores da paleta
+- **Intensidade**: Movimento mínimo para não distrair
+- **Consistência**: Mantém a identidade visual da paleta de cores
+
+### Correções Implementadas
+- **Problema identificado**: Degradê não estava visível devido à sobreposição de cores iguais
+- **Solução**: Removido background da Section, deixando apenas o div animado
+- **Cores aprimoradas**: `from-brand-50 via-earth-100 to-earth-300` para maior contraste
+- **Animação dupla**: Degradê principal + degradê secundário com direção oposta
+- **Timing otimizado**: 12s para o principal, 15s para o secundário (movimento mais suave)
+- **Background-size**: Aumentado para 300% 300% para movimento mais amplo
+
+## Correções de Responsividade do Hero
+
+### Problema Identificado
+- **H1 cortado no mobile**: O `whitespace-nowrap` impedia quebra de linha em telas pequenas
+- **Layout não responsivo**: Padding e margens fixos causavam problemas em dispositivos móveis
+
+### Soluções Implementadas
+- **Remoção do whitespace-nowrap**: Permite quebra natural de linha em todas as telas
+- **Tamanho de fonte responsivo**: `text-2xl sm:text-3xl lg:text-4xl xl:text-5xl`
+- **Padding adaptativo**: `py-12 sm:py-16 lg:py-20` para diferentes tamanhos de tela
+- **Grid gap responsivo**: `gap-6 sm:gap-8 lg:gap-12` para espaçamento adequado
+- **Padding lateral mobile**: `px-4 sm:px-0 lg:pr-8` para evitar corte nas bordas
+
+### Resultado
+- **Mobile**: Texto quebra naturalmente sem ser cortado
+- **Tablet**: Layout intermediário com espaçamento otimizado
+- **Desktop**: Layout completo com espaçamento original
+- **Responsividade**: Funciona perfeitamente em todos os dispositivos
+
+## Implementação da Imagem no Card do Hero
+
+### Mudança Implementada
+- **Antes**: Placeholder SVG com gradiente marrom e ícone de escudo
+- **Depois**: Imagem real `card-hero.png` do diretório assets
+
+### Características da Nova Implementação
+- **Imagem**: `card-hero.png` localizada em `/src/assets/`
+- **Alt text**: "Card hero da Urgani Advocacia" para acessibilidade
+- **Estilo**: `object-cover object-center` para melhor apresentação visual
+- **Container**: Fundo branco com borda `earth-200` e sombra `shadow-2xl`
+- **Responsividade**: Mantém `max-w-md` e `h-[500px]` para consistência
+
+### Benefícios da Mudança
+- **Visual real**: Substitui o placeholder por conteúdo real da empresa
+- **Profissionalismo**: Imagem específica e contextual do agronegócio
+- **Acessibilidade**: Alt text descritivo para leitores de tela
+- **Performance**: Imagem otimizada local vs. SVG placeholder
+- **Consistência**: Mantém o design e animações existentes
+
+## Padronização das Cores dos Ícones
+
+### Mudanças Implementadas
+- **Seção Challenges**: Ícones alterados de `text-accent-500` (teal) para `text-earth-500` (marrom terroso)
+- **Footer**: Ícones de contato alterados de `text-accent-400` para `text-earth-500`
+- **Seção Process**: SVG das setas alterado de `text-accent-400` para `text-earth-400`
+
+### Cores Padronizadas
+- **Ícones principais**: `text-earth-500` (marrom terroso principal)
+- **Ícones secundários**: `text-earth-400` (marrom terroso médio)
+- **Consistência**: Todos os ícones agora seguem a paleta earth (marrom/terracotta)
+
+### Benefícios da Padronização
+- **Identidade visual**: Cores consistentes em todo o site
+- **Paleta unificada**: Verde oliva (brand) + marrom terroso (earth) + teal (accent)
+- **Profissionalismo**: Visual mais coeso e organizado
+- **Hierarquia visual**: Diferentes tons de marrom para diferentes níveis de importância
+
+## Alteração da Cor dos Círculos de Numeração
+
+### Mudança Implementada
+- **Seção Process**: Círculos de numeração alterados de marrom terroso para verde oliva
+- **Antes**: `from-earth-400 to-earth-500` (gradiente marrom)
+- **Depois**: `#4A5D4A` (verde oliva específico da marca)
+
+### Correção Aplicada
+- **Problema**: As cores `brand-600` e `brand-700` não estavam sendo aplicadas corretamente
+- **Solução**: Uso direto da cor hex `#4A5D4A` via inline style
+- **Resultado**: Círculos agora exibem a cor verde oliva exata da marca Urgani Advocacia
+
+## Transformação Completa do Hero
+
+### Mudanças Implementadas
+- **Remoção do card**: Card da direita com imagem removido completamente
+- **Imagem como background**: `card-hero.png` agora é o background da seção hero
+- **Overlay gradiente**: Gradiente linear de cima para baixo (`from-brand-600/80 via-brand-700/60 to-brand-800/40`)
+- **Layout centralizado**: Conteúdo agora centralizado em uma única coluna
+- **Cores ajustadas**: Texto em branco para contraste com o background escuro
+
+### Estrutura do Novo Background
+1. **Imagem de fundo**: `card-hero.png` com `bg-cover bg-center bg-no-repeat`
+2. **Overlay principal**: Gradiente linear de cima para baixo com cores da seção Dilemma
+3. **Transparências**: 80% → 60% → 40% para legibilidade e profundidade visual
+
+### Cores do Gradiente
+- **`brand-600/80`**: Verde oliva com 80% de opacidade (topo)
+- **`brand-700/60`**: Verde oliva médio com 60% de opacidade (meio)
+- **`brand-800/40`**: Verde oliva escuro com 40% de opacidade (base)
+- **Direção**: `bg-gradient-to-b` (de cima para baixo)
+
+### Layout Centralizado
+- **Conteúdo**: Centralizado com `max-w-4xl mx-auto`
+- **Texto**: Título em branco, parágrafo em `text-brand-100`
+- **Bullets**: Centralizados com ícones em `text-earth-400`
+- **Botões**: Centralizados com `justify-center`
+
+### Benefícios da Nova Abordagem
+- **Visual impactante**: Imagem de fundo cria atmosfera profissional
+- **Foco no conteúdo**: Layout centralizado destaca a mensagem principal
+- **Consistência visual**: Mesmas cores da seção Dilemma
+- **Experiência moderna**: Design contemporâneo e elegante
+
+## Implementação do Header Transparente com Transição Dinâmica
+
+### Funcionalidade Implementada
+- **Header transparente**: Sobre o hero com fundo transparente
+- **Transição dinâmica**: Muda para background branco ao scrollar
+- **Acompanhamento da página**: Header sticky que segue o scroll
+- **Performance otimizada**: Throttle com requestAnimationFrame
+
+### Implementação Técnica
+- **Estado React**: `useState` para controlar `isHeaderTransparent`
+- **Detector de scroll**: `useEffect` com event listener de scroll
+- **Threshold**: 100px para mudança de estado
+- **Throttle**: Performance otimizada para eventos de scroll
+
+### Comportamento Visual
+- **No Hero (scroll < 100px)**:
+  - Background: `transparent`
+  - Borda: `transparent`
+  - Sombra: `none`
+  - Texto: Branco para contraste com hero
+- **Ao Scrollar (scroll > 100px)**:
+  - Background: `bg-white/95` com backdrop-blur
+  - Borda: `border-brand-200`
+  - Sombra: `shadow-soft`
+  - Texto: Escuro para legibilidade
+
+### Componentes Atualizados
+- **Header**: Classes condicionais baseadas no estado
+- **Navigation**: Cores adaptativas para ambos os estados
+- **MobileMenu**: Cores adaptativas para ambos os estados
+- **Hero**: Ajuste de padding para compensar header transparente
+
+### Benefícios da Implementação
+- **Visual impactante**: Header transparente sobre o hero
+- **Navegação clara**: Sempre legível independente do estado
+- **Transições suaves**: Mudanças fluidas entre estados
+- **Performance**: Throttle evita sobrecarga de eventos
+- **Responsividade**: Funciona em todos os dispositivos
+
+## Ajuste do Hero para Tela Cheia (100vh)
+
+### Mudanças Implementadas
+- **Altura do hero**: Alterado de `min-h-[90vh]` para `min-h-screen` (100vh)
+- **Centralização perfeita**: Conteúdo centralizado vertical e horizontalmente na tela
+- **Layout otimizado**: Container principal ocupa toda a altura disponível
+- **Compensação do header**: Margem negativa e padding ajustados para header transparente
+
+### Ajustes Técnicos
+- **Section**: `min-h-screen` para ocupar toda a altura da viewport
+- **Container**: `min-h-screen` com `items-center justify-center`
+- **Conteúdo**: Centralização perfeita com `items-center min-h-screen`
+- **Header**: Compensação com `-mt-16 pt-16` para não sobrepor
+
+### Correção da Centralização
+- **Problema identificado**: Conteúdo ficava muito baixo na tela
+- **Solução aplicada**: Remoção de `min-h-screen` excessivo dos containers
+- **Padding ajustado**: `py-20` para centralização vertical adequada
+- **Layout otimizado**: Conteúdo agora centralizado na altura correta
+
+### Centralização Perfeita Implementada
+- **Flexbox otimizado**: `h-full` com `items-center justify-center`
+- **Container do conteúdo**: `flex flex-col justify-center` para centralização vertical
+- **Padding removido**: Sem padding excessivo que deslocava o conteúdo
+- **Centralização matemática**: Conteúdo perfeitamente no centro da tela
+
+### Ajuste de Posição Vertical
+- **Problema identificado**: Conteúdo estava muito alto na tela
+- **Solução aplicada**: Mudança de `items-center` para `items-start` com `pt-32`
+- **Posicionamento**: Conteúdo agora posicionado mais abaixo, próximo ao centro real
+- **Layout otimizado**: Melhor distribuição visual na tela
+
+### Centralização Final no Meio da Tela
+- **Ajuste refinado**: Aumentado de `pt-32` para `pt-48`
+- **Posicionamento perfeito**: Conteúdo agora exatamente no meio da tela
+- **Foco no desktop**: Ajuste otimizado para telas maiores
+- **Mobile separado**: Será ajustado posteriormente para dispositivos móveis
+
+### Ajustes Responsivos para Mobile Implementados
+- **Padding responsivo**: `pt-20 sm:pt-32 lg:pt-48` (mobile: 80px, tablet: 128px, desktop: 192px)
+- **Padding vertical**: `py-8 sm:py-0` (mobile: 32px, desktop: 0px)
+- **Layout mobile**: Distância reduzida para melhor experiência em dispositivos menores
+- **Desktop mantido**: Centralização perfeita preservada em telas maiores
+
+### Ajuste Fino do Padding Mobile
+- **Redução aplicada**: Mobile de `pt-20` (80px) para `pt-16` (64px)
+- **Padding responsivo atualizado**: `pt-16 sm:pt-32 lg:pt-48` (mobile: 64px, tablet: 128px, desktop: 192px)
+- **Mobile otimizado**: Conteúdo mais próximo do topo para melhor experiência
+- **Desktop inalterado**: Centralização perfeita mantida em telas maiores
+
+### Resultado Visual
+- **Tela cheia**: Hero ocupa 100% da altura da viewport
+- **Centralização perfeita**: Conteúdo perfeitamente centralizado
+- **Header transparente**: Sobre o hero sem interferir no layout
+- **Experiência impactante**: Primeira impressão em tela cheia
+
+### Benefícios da Implementação
+- **Visual impactante**: Hero em tela cheia cria primeira impressão forte
+- **Foco no conteúdo**: Mensagem principal perfeitamente centralizada
+- **Header integrado**: Transparente sobre o hero sem quebrar o layout
+- **Responsividade**: Funciona em todos os tamanhos de tela

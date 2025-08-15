@@ -60,34 +60,40 @@ export const FAQ: React.FC = () => {
           {faqItems.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-soft overflow-hidden"
+              className="bg-white rounded-xl shadow-soft overflow-hidden transform transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1"
             >
               <button
                 onClick={() => toggleItem(index)}
-                className="w-full px-6 py-4 text-left flex items-center justify-between"
+                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 ease-in-out focus:outline-none"
               >
                 <h3 className="text-lg font-semibold text-brand-900 pr-4">
                   {item.question}
                 </h3>
-                <svg
-                  className={`w-5 h-5 text-brand-600 ${
-                    openItems.includes(index) ? 'rotate-180' : ''
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+                              <svg
+                className={`w-5 h-5 text-brand-600 transition-transform duration-300 ease-in-out ${
+                  openItems.includes(index) ? 'rotate-180' : ''
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
               </button>
               
-              {openItems.includes(index) && (
+              <div 
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  openItems.includes(index) 
+                    ? 'max-h-96 opacity-100' 
+                    : 'max-h-0 opacity-0'
+                }`}
+              >
                 <div className="px-6 pb-4">
                   <p className="text-gray-600 leading-relaxed">
                     {item.answer}
                   </p>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
@@ -97,12 +103,17 @@ export const FAQ: React.FC = () => {
             Ainda tem dúvidas? Entre em contato conosco!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#contato"
-              className="inline-flex items-center justify-center px-6 py-3 bg-brand-600 text-white font-semibold rounded-lg"
+            <button
+              onClick={() => {
+                const element = document.getElementById('continuidade')
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
+              className="inline-flex items-center justify-center px-6 py-3 bg-brand-600 text-white font-semibold rounded-lg hover:bg-brand-700 transition-colors duration-200"
             >
               Ir para contato
-            </a>
+            </button>
           </div>
         </div>
       </Container>

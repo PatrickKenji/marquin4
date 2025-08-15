@@ -4,5 +4,5 @@ export { Heading } from './Heading'
 export { MobileMenu } from './MobileMenu'
 export { Navigation } from './Navigation'
 export { Section } from './Section'
-export { StickyCTA } from './StickyCTA'
+
 export { ScrollAnimation, AnimatedHeading, AnimatedCard, AnimatedCardList } from './ScrollAnimation'

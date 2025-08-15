@@ -43,7 +43,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   // WhatsApp CTA
   if (whatsapp) {
-    const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '+5544999999999'
+    const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '+5544984057280'
     const message = encodeURIComponent('Olá, quero orientação sobre meu caso no agronegócio')
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`
     

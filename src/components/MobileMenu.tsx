@@ -5,10 +5,16 @@ const navigationItems = [
   { id: 'desafios', label: 'Desafios', href: '#desafios' },
   { id: 'sobre', label: 'Sobre', href: '#sobre' },
   { id: 'como-atuamos', label: 'Como Atuamos', href: '#como-atuamos' },
-  { id: 'contato', label: 'Contato', href: '#contato' }
+  { id: 'continuidade', label: 'Contato', href: '#continuidade' }
 ]
 
-export const MobileMenu: React.FC = () => {
+interface MobileMenuProps {
+  isTransparent?: boolean
+  logoBranca: string
+  logoPreta: string
+}
+
+export const MobileMenu: React.FC<MobileMenuProps> = ({ isTransparent = false }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleNavClick = (sectionId: string) => {
@@ -21,7 +27,11 @@ export const MobileMenu: React.FC = () => {
       {/* Menu Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="text-brand-800 p-2 hover:text-brand-600 transition-colors"
+        className={`p-2 transition-colors ${
+          isTransparent 
+            ? 'text-black sm:text-white hover:text-brand-100' 
+            : 'text-black hover:text-gray-700'
+        }`}
         aria-label="Abrir menu de navegação"
         aria-expanded={isOpen}
       >
@@ -47,7 +57,7 @@ export const MobileMenu: React.FC = () => {
                       e.preventDefault()
                       handleNavClick(item.id)
                     }}
-                    className="block text-brand-800 p-2 font-medium text-lg hover:text-brand-600 hover:bg-brand-100 transition-colors rounded"
+                    className="block text-black p-2 font-medium text-lg hover:text-brand-600 hover:bg-brand-100 transition-colors rounded"
                   >
                     {item.label}
                   </a>

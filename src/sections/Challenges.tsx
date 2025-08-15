@@ -50,7 +50,7 @@ export const Challenges: React.FC = () => {
                   <div className="flex flex-col h-full">
                     <div className="bg-white rounded-xl p-6 shadow-soft border border-brand-100 flex-1 flex flex-col hover:shadow-xl hover:border-earth-300 transition-all duration-300 transform hover:-translate-y-2">
                       <div className="text-center mb-4 h-16 flex items-center justify-center">
-                        <IconComponent className="w-10 h-10 text-accent-500" />
+                        <IconComponent className="w-10 h-10 text-earth-500" />
                       </div>
                       <h3 className="text-xl font-bold text-brand-800 mb-3 text-center h-16 flex items-center justify-center">
                         {challenge.title}

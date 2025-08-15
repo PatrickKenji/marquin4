@@ -56,7 +56,7 @@ export const Process: React.FC = () => {
                         <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-100 to-transparent rounded-full opacity-50 -mr-6 -mt-6"></div>
                         
                         {/* Número do passo com gradiente - POSICIONADO NO CANTO SUPERIOR DIREITO */}
-                        <div className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-earth-400 to-earth-500 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg z-30">
+                        <div className="absolute -top-2 -right-2 w-16 h-16 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg z-30" style={{backgroundColor: '#4A5D4A'}}>
                           {step.step}
                         </div>
                         
@@ -79,7 +79,7 @@ export const Process: React.FC = () => {
                       {/* Seta elegante SVG (exceto para o último passo) */}
                       {index < processSteps.length - 1 && (
                         <div className="hidden lg:block absolute top-1/2 -right-8 transform -translate-y-1/2 z-10">
-                          <svg width="80" height="40" viewBox="0 0 80 40" className="text-accent-400">
+                          <svg width="80" height="40" viewBox="0 0 80 40" className="text-earth-400">
                             <defs>
                               <linearGradient id={`arrowGradient${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
                                 <stop offset="0%" stopColor="#7FB3B3" stopOpacity="0.3"/>

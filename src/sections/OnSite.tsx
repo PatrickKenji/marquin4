@@ -86,9 +86,9 @@ export const OnSite: React.FC = () => {
 
           {/* CTA e Informações */}
           <AnimatedCard delay={0.4} className="h-full">
-            <div className="bg-white rounded-xl p-8 shadow-soft border border-brand-100 text-center flex flex-col justify-center hover:shadow-xl hover:border-earth-300 transition-all duration-300 transform hover:-translate-y-2 h-full">
+            <div className="bg-white rounded-xl p-8 shadow-soft border border-brand-100 flex flex-col justify-center hover:shadow-xl hover:border-earth-300 transition-all duration-300 transform hover:-translate-y-2 h-full">
               {/* Google Maps - Localização da Empresa */}
-              <div className="mb-8">
+              <div className="mb-8 text-center">
                 <h4 className="text-lg font-semibold text-brand-800 mb-4">Nossa Localização</h4>
                 <div className="w-full h-56 rounded-lg overflow-hidden border border-brand-200">
                   <iframe
@@ -106,36 +106,36 @@ export const OnSite: React.FC = () => {
                 <p className="text-sm text-brand-700 mt-3">Almeida Urgnani Advocacia - Maringá, Paraná</p>
               </div>
               
-              <h3 className="text-2xl font-bold text-brand-800 mb-8">
+              <h3 className="text-2xl font-bold text-brand-800 mb-8 text-left">
                 Agende sua reunião
               </h3>
               
               <div className="space-y-4 mb-8">
-                <div className="flex items-center justify-center gap-3 text-brand-700">
-                  <svg className="w-5 h-5 text-earth-500" fill="currentColor" viewBox="0 0 20 20">
+                <div className="flex items-start gap-3 text-brand-700 justify-start">
+                  <svg className="w-6 h-6 text-earth-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Plantão para demandas urgentes</span>
+                  <span className="text-sm leading-relaxed text-left">Plantão para demandas urgentes</span>
                 </div>
                 
-                <div className="flex items-center justify-center gap-3 text-brand-700">
-                  <svg className="w-5 h-5 text-earth-500" fill="currentColor" viewBox="0 0 20 20">
+                <div className="flex items-start gap-3 text-brand-700 justify-start">
+                  <svg className="w-6 h-6 text-earth-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Atendimento no escritório ou na sua propriedade</span>
+                  <span className="text-sm leading-relaxed text-left">Atendimento no escritório ou na sua propriedade</span>
                 </div>
                 
-                <div className="flex items-center justify-center gap-3 text-brand-700">
-                  <svg className="w-5 h-5 text-earth-500" fill="currentColor" viewBox="0 0 20 20">
+                <div className="flex items-start gap-3 text-brand-700 justify-start">
+                  <svg className="w-6 h-6 text-earth-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Mais de 15 anos de experiência no agro</span>
+                  <span className="text-sm leading-relaxed text-left">Mais de 15 anos de experiência no agro</span>
                 </div>
               </div>
 
-              <div className="space-y-3">
+              <div className="space-y-3 text-center">
                 <Button whatsapp variant="primary" size="lg" className="w-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                  Agende agora sua reunião presencial ou online
+                  Agende agora sua reunião
                 </Button>
               </div>
             </div>
