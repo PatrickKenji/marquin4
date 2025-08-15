@@ -75,7 +75,7 @@ function App() {
         {/* Hero Section - Header Full Screen */}
         <Section className="min-h-screen sm:min-h-screen relative overflow-hidden -mt-16">
           {/* Imagem de fundo */}
-          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: 'url(/src/assets/card-hero.png)'}}></div>
+          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: 'url(/card-hero.png)'}}></div>
           {/* Overlay com gradiente linear de cima para baixo */}
                       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/80"></div>
           
